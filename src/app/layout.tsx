@@ -1,3 +1,4 @@
+import { Header } from '@/components/Header'
 import { lato, montserrat } from '@/fonts'
 import { ReactNode } from 'react'
 
@@ -13,8 +14,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
    return (
       <html lang="pt-BR">
          <body
-            className={`${lato.variable} ${montserrat.variable} bg-neutral-100`}
+            className={`${lato.variable} ${montserrat.variable} bg-neutral-100 font-montserrat`}
          >
+            <Header />
             {children}
          </body>
       </html>
