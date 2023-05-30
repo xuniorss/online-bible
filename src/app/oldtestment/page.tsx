@@ -1,5 +1,5 @@
 import { Container } from '@/components/Container'
-import { Books } from '../(home)/components/Books'
+import { Books } from '../../components/Books'
 
 export default function Oldtestment() {
    return (
