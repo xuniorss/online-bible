@@ -3,8 +3,8 @@ import { Books } from './components/Books'
 
 export default function Home() {
    return (
-      <section className="h-auto">
-         <main className="mt-16 flex flex-col items-center">
+      <section className="min-h-screen">
+         <main className="my-16 flex flex-col items-center">
             <Container>
                <div className="flex flex-col space-y-7">
                   <article className="mt-7 text-black">

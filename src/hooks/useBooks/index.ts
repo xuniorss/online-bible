@@ -7,6 +7,7 @@ export const useBooks = () => {
    const { data } = useQuery<BooksProps[]>({
       queryKey: process.env.NEXT_PUBLIC_BOOKS_KEY,
       queryFn: () => axios.get('/api/books').then((response) => response.data),
+      staleTime: 86400000, // 1 dia em milissegundos
    })
 
    const oldtestment = useMemo(() => {

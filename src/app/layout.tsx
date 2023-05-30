@@ -1,3 +1,4 @@
+import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { lato, montserrat } from '@/fonts'
 import { ReactNode } from 'react'
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <Providers>
                <Header />
                {children}
+               <Footer />
             </Providers>
          </body>
       </html>
