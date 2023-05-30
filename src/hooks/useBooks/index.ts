@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useMemo } from 'react'
 import { useQuery } from 'react-query'
 
-export const useBooks = () => {
+export const useBooks = (testament?: 'VT' | 'NT') => {
    const { data } = useQuery<BooksProps[]>({
       queryKey: process.env.NEXT_PUBLIC_BOOKS_KEY,
       queryFn: () => axios.get('/api/books').then((response) => response.data),
@@ -24,5 +24,25 @@ export const useBooks = () => {
       return nt
    }, [data])
 
-   return { data, oldtestment, newtestment }
+   const groupes = useMemo(() => {
+      if (!data || !testament) return
+
+      const uniqueGroups = data.map((value) => ({
+         testament: value.testament,
+         group: value.group,
+      }))
+
+      const filteredGroups = uniqueGroups.filter(
+         (value, index, self) =>
+            self.findIndex((v) => v.group === value.group) === index
+      )
+
+      const especified = filteredGroups.filter(
+         (value) => value.testament === testament
+      )
+
+      return especified
+   }, [data, testament])
+
+   return { data, oldtestment, newtestment, groupes }
 }
