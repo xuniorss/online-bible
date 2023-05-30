@@ -3,6 +3,7 @@ import { lato, montserrat } from '@/fonts'
 import { ReactNode } from 'react'
 
 import './globals.css'
+import { Providers } from './providers'
 
 export const metadata = {
    title: 'Bíblia Online',
@@ -16,8 +17,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
          <body
             className={`${lato.variable} ${montserrat.variable} bg-neutral-100 font-montserrat`}
          >
-            <Header />
-            {children}
+            <Providers>
+               <Header />
+               {children}
+            </Providers>
          </body>
       </html>
    )
