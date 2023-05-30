@@ -1,6 +1,6 @@
 import { VerseProps } from '@/@types'
-import { useQuery } from 'react-query'
 import axios from 'axios'
+import { useQuery } from 'react-query'
 
 export const useRandom = (version?: string) => {
    const v = version || 'nvi'
