@@ -47,6 +47,10 @@ export const Books = ({ testament }: BookProps) => {
                </div>
             )
          })}
+
+         {books.length === 0 && (
+            <p className="font-lato text-lg">Buscando...</p>
+         )}
       </div>
    )
 }
