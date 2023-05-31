@@ -6,7 +6,7 @@ type AbbrevProps = {
 export type BooksProps = {
    abbrev: AbbrevProps
    author: string
-   chapters: string
+   chapters: number
    group: string
    name: string
    testament: 'VT' | 'NT'
@@ -17,4 +17,11 @@ export type VerseProps = {
    chapter: number
    number: number
    text: string
+}
+
+export type BookProps = {
+   abbrev: AbbrevProps
+   author: string
+   chapters: number
+   comment: string
 }
